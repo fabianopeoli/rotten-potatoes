@@ -39,6 +39,7 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
+          no-cache: true
           tags: | 
             fabianopeoli/rotten-potatoes:latest
             fabianopeoli/rotten-potatoes:${{ github.run_number }}
