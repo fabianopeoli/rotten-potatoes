@@ -33,6 +33,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USER }}
           # Password or personal access token used to log against the Docker registry
           password: ${{ secrets.DOCKERHUB_PWD }}
+
       - name: Docker build and push
         uses: docker/build-push-action@v2.7.0
         with:
@@ -43,6 +44,7 @@ jobs:
           #  fabianopeoli/rotten-potatoes:latest
           tags: | 
             fabianopeoli/rotten-potatoes:v1
+            
   CD:
     needs: [CI]
     runs-on: ubuntu-latest
