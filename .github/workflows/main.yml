@@ -43,8 +43,7 @@ jobs:
           no-cache: true
           #  fabianopeoli/rotten-potatoes:latest
           tags: | 
-            fabianopeoli/rotten-potatoes:v1
-            
+            fabianopeoli/rotten-potatoes:v1       
   CD:
     needs: [CI]
     runs-on: ubuntu-latest
