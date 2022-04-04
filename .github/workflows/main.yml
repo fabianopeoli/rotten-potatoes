@@ -40,9 +40,9 @@ jobs:
           file: ./src/Dockerfile
           push: true
           no-cache: true
+          #  fabianopeoli/rotten-potatoes:latest
           tags: | 
-            fabianopeoli/rotten-potatoes:latest
-            fabianopeoli/rotten-potatoes:${{ github.run_number }}
+            fabianopeoli/rotten-potatoes:v1
   CD:
     needs: [CI]
     runs-on: ubuntu-latest
@@ -57,6 +57,7 @@ jobs:
       - name: Deploy to Kubernetes cluster
         uses: Azure/k8s-deploy@v3.0
         with:
-          images: fabianopeoli/rotten-potatoes:${{ github.run_number }}
+          #images: fabianopeoli/rotten-potatoes:${{ github.run_number }}
+          images: fabianopeoli/rotten-potatoes:v1
           manifests: |
             k8s/deployment.yaml
